@@ -1,0 +1,16 @@
+# !/usr/bin/env node
+const add = require('../src/command/add')
+const list = require('../src/command/list')
+const init = require('../src/command/init')
+const del = require('../src/command/del')
+const program = require('commander')
+const { version } = require('../package')
+
+// 定义当前版本
+program
+.version(version)
+
+program.parse(process.argv)
+if (!program.args.length) {
+  program.help()
+}
