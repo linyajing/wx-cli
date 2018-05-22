@@ -1,0 +1,6 @@
+{
+    "prod": {
+      "git": "https://github.com/linyajing/wx-cli.git",
+      "branch": "master"
+    }
+}
