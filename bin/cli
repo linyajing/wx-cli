@@ -1,33 +1,36 @@
 #!/usr/bin/env node
-// const add = require('../src/command/add')
-// const list = require('../src/command/list')
-const init = require('../src/command/init')
+ // const list = require('../src/command/list')
+const init = require('../src/command/init');
+const add = require('../src/command/add')
 // const del = require('../src/command/del')
 const program = require('commander')
-const { version } = require('../package')
+const {
+    version
+} = require('../package')
 
 // 定义当前版本
-program
-.version(version)
-
+program.version(version)
 
 /*
  * 设置初始化
-*/
+ */
 program
-.command('init')
-.description('初始话一个微信小程序项目')
-.alias('i')
-.action(init)
+    .command('init')
+    .description('初始话一个微信小程序项目')
+    .alias('i')
+    .option('-name [dirname]', '新建项目名称')
+    .action(function (dir, cmd) {
+        init(dir || 'wx-template');
+    });
 
 /*
-* 添加页面
-*/
-// program
-// .command('add')
-// .description('add template')
-// .alias('a')
-// .action(add)
+ * 添加页面
+ */
+program
+    .command('add')
+    .description('add new page')
+    .alias('a')
+    .action(add);
 
 /*
  * 删除模板
@@ -41,14 +44,14 @@ program
 /*
  * 模板列表
  * */
-program
-.command('list')
-.description('List all the templates')
-.alias('l')
-.action(list)
+// program
+// .command('list')
+// .description('List all the templates')
+// .alias('l')
+// .action(list)
 
 
 program.parse(process.argv)
 if (!program.args.length) {
-  program.help()
+    program.help()
 }

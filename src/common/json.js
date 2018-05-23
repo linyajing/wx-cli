@@ -1,4 +1,9 @@
-// 格式化字符串数据
+/**
+ * 格式化字符串数据
+ * @author: linyajing
+ * @created: 2018.05.22
+ * @updated: 2018.05.23
+ */
 module.exports = {
     stringify: (data, space) => {
       const seen = []
