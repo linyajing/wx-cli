@@ -17,9 +17,10 @@ program
     .command('init')
     .description('初始化一个微信小程序项目')
     .alias('i')
-    .option('-name [dirname]', '新建项目名称')
+    .option('--name [dirname]', '新建项目名称')
     .action(function (dir, cmd) {
-        init(dir || 'wx-template');
+        dir = typeof dir === 'object' ? 'wx-template' : dir;
+        init(dir);
     });
 
 /*
