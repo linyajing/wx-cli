@@ -14,13 +14,11 @@ program.version(version)
  * 设置初始化
  */
 program
-    .command('init')
+    .command('init [path]')
     .description('初始化一个微信小程序项目')
     .alias('i')
-    .option('--name [dirname]', '新建项目名称')
-    .action(function (dir, cmd) {
-        dir = typeof dir === 'object' ? 'wx-template' : dir;
-        init(dir);
+    .action(function (path) {
+        init(path || 'wx-template');
     });
 
 /*
