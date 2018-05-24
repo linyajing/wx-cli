@@ -22,7 +22,7 @@
         "prompt": "^1.0.0"
     },
     "engines": {
-        "install-node": "7.6.0"
+        "install-node": "9.0.0"
     },
     "bin": {
         "wx-cli": "./bin/cli"
