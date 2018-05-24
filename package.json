@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "description": "微信小程序脚手架",
     "author": "linyajing",
+    "email": "563278849@qq.com",
     "main": "index.js",
     "scripts": {
         "pub": "npm version patch && npm publish"
