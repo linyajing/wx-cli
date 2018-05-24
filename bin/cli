@@ -1,8 +1,7 @@
 #!/usr/bin/env node
- // const list = require('../src/command/list')
 const init = require('../src/command/init');
 const add = require('../src/command/add')
-// const del = require('../src/command/del')
+
 const program = require('commander')
 const {
     version
@@ -16,7 +15,7 @@ program.version(version)
  */
 program
     .command('init')
-    .description('初始话一个微信小程序项目')
+    .description('初始化一个微信小程序项目')
     .alias('i')
     .option('-name [dirname]', '新建项目名称')
     .action(function (dir, cmd) {
@@ -31,25 +30,6 @@ program
     .description('add new page')
     .alias('a')
     .action(add);
-
-/*
- * 删除模板
- * */
-// program
-// .command('del')
-// .description('Delete a template')
-// .alias('d')
-// .action(del)
-
-/*
- * 模板列表
- * */
-// program
-// .command('list')
-// .description('List all the templates')
-// .alias('l')
-// .action(list)
-
 
 program.parse(process.argv)
 if (!program.args.length) {
